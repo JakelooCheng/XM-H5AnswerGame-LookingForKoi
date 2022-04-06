@@ -1,0 +1,167 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	
+	background-attachment: fixed;
+	background-size: cover;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	
+	font-size: 62.5%;
+}
+
+/* 遮罩弹窗 */
+.pop {
+	z-index: 99;
+	display: block;
+	position: absolute;
+	margin:10%;
+	width:80%;
+	height: 80%;
+	background-color: #FFF;
+}
+
+.mask {
+	height: 100%;
+	width: 100%;
+	display: block;
+	background-color: #000000;
+	position: absolute;
+	opacity: 0.5;
+	animation: showMask 0.5s;
+	-webkit-animation: showMask 0.5s;
+	z-index: 1;
+}
+
+@keyframes showMask{
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+}
+ 
+@-webkit-keyframes showMask{
+    from {opacity: 0;}
+    to {opacity: 0.5;}
+}
+
+/* 首页 home */
+.home {
+	width: 100%;
+	height: 100%;
+	
+	z-index:10;
+}
+
+.home div {
+	width: 70%;
+	height: 80pt;
+	background-color: #FFFFFF;
+
+	position: absolute;
+	bottom: 100pt;
+
+	margin: 20pt 15% 20pt 15%;
+	border: 2pt solid #3181ff;
+	border-radius: 40pt;
+
+	line-height: 80pt;
+	font-size: 50pt;
+	font-weight: 500;
+	text-align: center;
+	letter-spacing: 5pt;
+	color: #3181ff;
+}
+
+.home div:active {
+	background: #befffb;
+}
+
+
+/* 顶部标题 banner */
+.banner {
+	width: 100%;
+	padding: 6em;
+	box-sizing: border-box;
+}
+
+.banner img {
+	width: 100%;
+}
+
+/* 答题区域 answer-area */
+.answer-area {
+	width: 100%;
+
+	position: absolute;
+	bottom: 60px;
+}
+
+/* 问题 question */
+.question {
+	width: 84%;
+	margin: 24px 8% 24px 8%;
+	padding: 50px;
+	box-sizing: border-box;
+	min-height: 180px;
+	border-radius: 20px;
+	border: 5px solid #3181FF;
+
+	position: relative;
+
+	background: #FFFFFF;
+}
+
+.question img {
+	width: 200px;
+	position: absolute;
+	left: -40px;
+	top: -70px;
+}
+
+.question p {
+	height: 100%;
+	width: 100%;
+
+	text-align: center;
+	font-size: 50px;
+	line-height: 65px;
+	font-weight: 500;
+	color: #3181FF;
+}
+
+/* 选项 option */
+.option {
+	width: 100%;
+	padding: 6px 130px 6px 130px;
+	box-sizing: border-box;
+	float: left;
+
+	position: relative;
+
+	text-align: center;
+	font-size: 50px;
+	font-weight: 500;
+	color: #3181FF;
+
+	z-index: 10;
+}
+
+.option img {
+	width: 100%;
+	float: left;
+
+	z-index: 9;
+}
+
+.option div {
+	width: calc(100% - 390px);
+	position: absolute;
+	left: 240px;
+	top: 36px;
+
+	overflow: hidden;
+}

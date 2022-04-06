@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>小米抽奖测试 Demo</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+		<!-- 引入并初始化腾讯云开发SDK -->
+		<script src="//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.6.0/cloudbase.full.js"></script>
+		
+		<script src="//s1.mi.com/m/source/scripts/wbs/vue.min.js"></script>
+		<script src="//res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+		<script src="//s1.mi.com/m/source/scripts/wbs/fetch-jsonp.min.js"></script>
+		<script src="//s1.mi.com/m/source/scripts/wbs/axios.min.js"></script>
+		<script src="//s1.mi.com/m/source/scripts/wbs/md5.min.js"></script>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	
+	<body>
+		<div id="mainapp">
+			<!-- 遮罩弹窗
+			<div class="pop">
+				
+			</div>
+			 -->
+			<div v-if="show" class="mask" v-on:click.once="toAnswerPage()"></div>
+			
+
+			<!-- 首页 -->
+			<div v-if="page%4==0" class="home">
+				<div v-on:click.once="toAnswerPage()">开始答题</div>
+			</div>
+			
+			<!-- 答题页 -->
+			<div v-if="page%4==1">
+				<div class="banner">
+					<img src="img/Banner.png">
+				</div>
+				
+				<div class="answer-area">
+					<div class="question">
+						<p>{{nowQuestion.question}}</p>
+						<img src="./img/题号@3x.png" alt="题号" />
+					</div>
+					<div 
+						class="option"
+						v-for="(option,index) in nowQuestion.options" 
+						@click="pickOption(index)">
+						<div>{{option}}</div>
+						<img :src="index|optionSrc" alt="选项">
+					</div>
+				</div>
+			</div>
+			
+			<!-- 结算页 -->
+			<div v-if="page%4==2" class="">
+				<p style="font-size: 50pt;">分享界面：共做对了{{score}}题</p>
+			</div>
+		</div>
+		
+		<script src="./js/sdk.js?202107191410"></script>
+		<script src="./js/mainapp.js"></script>
+	</body>
+</html>
